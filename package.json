@@ -7,15 +7,20 @@
     "email": "contato.flavioalex@gmail.com"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node -r sucrase/register src/index.js",
+    "start:dev": "nodemon -r sucrase/register src/index.js"
   },
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^3.9.0",
+    "graphql": "^16.5.0"
+  },
+  "devDependencies": {
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.1.0",
-    "graphql": "^16.5.0",
-    "prettier": "^2.7.1"
+    "nodemon": "^2.0.18",
+    "prettier": "^2.7.1",
+    "sucrase": "^3.21.1"
   }
 }
