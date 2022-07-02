@@ -8,12 +8,14 @@
   },
   "scripts": {
     "start": "node -r sucrase/register src/index.js",
-    "start:dev": "nodemon -r sucrase/register src/index.js"
+    "start:dev": "nodemon -r sucrase/register src/index.js",
+    "start:server": "json-server --watch db.json --port 3001"
   },
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^3.9.0",
-    "graphql": "^16.5.0"
+    "graphql": "^16.5.0",
+    "json-server": "^0.17.0"
   },
   "devDependencies": {
     "eslint": "^8.18.0",
