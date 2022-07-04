@@ -1,6 +1,14 @@
-const user = () => ({ id: 1, name: 'John Doe' });
+import axios from '../../../axios.config';
 
-const users = () => [user(), user(), user()];
+const user = async (_, { id }) => {
+  const { data } = await axios.get(`/users/${id}`);
+  return data;
+};
+
+const users = async () => {
+  const { data } = await axios.get('/users/');
+  return data;
+};
 
 export const userResolvers = {
   Query: {

@@ -1,6 +1,14 @@
-const post = () => ({ id: 1, title: 'Post 1', content: 'Content 1' });
+import axios from '../../../axios.config';
 
-const posts = () => [post(), post(), post()];
+const post = async (_, { id }) => {
+  const { data } = await axios.get('posts/' + id);
+  return data;
+};
+
+const posts = async () => {
+  const { data } = await axios.get('posts/');
+  return data;
+};
 
 export const postResolvers = {
   Query: {
